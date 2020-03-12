@@ -2,7 +2,7 @@
 	<div class="menubar">
 		  <el-col :span="24">
 		    <el-menu
-		      default-active="2"
+		      default-active="1"
 		      class="el-menu-vertical-demo"
 		      @open="handleOpen"
 		      @close="handleClose"
@@ -16,12 +16,14 @@
 					  <span>{{ $t('menu.'+item.name)}}</span>
 					</template>
 					<el-menu-item-group v-if="item.children.length">
-					  <el-menu-item v-for="(it,n) in item.children" :key='n' :index="it.meta.index">
+					  <el-menu-item v-for="(it,n) in item.children"
+					   @click="jump(it)"
+					   :key='n' :index="it.meta.index">
 						  {{ $t('menu.'+it.name)}}
 					  </el-menu-item>
 					</el-menu-item-group>
 				  </el-submenu>
-				  <el-menu-item :index="item.meta.index+''" v-else>
+				  <el-menu-item :index="item.meta.index+''" v-else @click="jump(item)">
 					<i class="el-icon-menu"></i>
 					<span slot="title">{{ $t('menu.'+item.name)}}</span>
 				  </el-menu-item>
@@ -47,7 +49,13 @@
 	      },
 	      handleClose(key, keyPath) {
 	        console.log(key, keyPath);
-	      }
+	      },
+		  jump(route){
+			  console.log(route)
+			  this.$router.push({
+				  name:route.name
+			  })
+		  }
 	    }
 	  }
 </script>

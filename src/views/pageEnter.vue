@@ -1,9 +1,10 @@
 <template>
 	<div class="main">
 		<headbar></headbar>
-		<div class="container">
+		<div class="container flex_start">
 			<menubar></menubar>
-			<router-view/>
+			 <router-view>
+			 </router-view>
 		</div>
 	</div>
 </template>

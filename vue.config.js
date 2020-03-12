@@ -70,7 +70,7 @@ module.exports = {
         // // 跨域
         proxy: {
             '/api': {
-                target: 'http://weiim.top/public/index.php/api',
+                target: 'http://47.114.5.246/job',
 				changeOrigin:true,//允许跨域
 				pathRewrite: {
 				  '^/api': ''

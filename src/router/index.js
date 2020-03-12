@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+
 const routes = [
   {
     path: '/login',
@@ -18,6 +19,16 @@ const routes = [
     path: '/forgetPass',
     name: 'forgetPass',
     component:()=> import("../views/forgetPass/forgetPass.vue")
+  },
+  {
+    path: '/setCompany',
+    name: 'setCompany',
+    component:()=> import("../views/register/setCompany.vue")
+  },
+  {
+    path: '/auth',
+    name: 'auth',
+    component:()=> import("../views/register/auth.vue")
   }
 ]
 
@@ -25,6 +36,7 @@ export const mainRouters=[
 	{
 	  path: '/',
 	  name:'pageEnter',
+	  redirect:'/picMan',
 	  component:()=> import("../views/pageEnter.vue"),
 	  children:[
 		 {
@@ -52,15 +64,10 @@ export const mainRouters=[
 			  meta:{ index:4 }
 		 },
 		 {
-			 path:"/staff",
-			 name:'staff',
-			 component:()=>import("../views/staff/staff.vue"),
-			  meta:{ index:5 }
-		 },
-		 {
 			 path:"/compayMan",
 			 name:'compayMan',
 			 redirect:'/compayInfo',
+			 component:()=>import("../views/compayMan/index.vue"),
 			  meta:{ index:6 },
 			 children:[
 				 {
@@ -81,7 +88,8 @@ export const mainRouters=[
 			 path:"/Jurisdiction",
 			 name:'Jurisdiction',
 			 redirect:'/mamber',
-			  meta:{ index:'7' },
+			 component:()=>import("../views/Jurisdiction/index.vue"),
+			 meta:{ index:'7' },
 			 children:[
 				 {
 					 path:"/mamber",

@@ -5,6 +5,7 @@ module.exports={
 	noAuth:'未认证',
 	Authed:"已认证",
 	relaxPass:"修改密码",
+	fillInfo:"请完善企业信息",
 	loginOut:"退出",
 	menu:{
 		picMan:"形象展示图片管理",

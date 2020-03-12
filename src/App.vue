@@ -30,4 +30,32 @@
     }
   }
 }
+
+.form_fixed{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 10;
+	.form{
+		position: relative;
+		margin: 10% auto;
+		padding:30px;
+		width:500px;
+		background: #fff;
+		border-radius: 8px;
+		.close{
+			font-size: 30px;
+			font-weight: 600;
+			position: absolute;
+			top: 10px;
+			right: 30px;
+		}
+		.title{
+			padding-bottom: 30px;
+		}
+	}
+}
 </style>

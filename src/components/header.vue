@@ -8,7 +8,7 @@
 				<i class='el-icon-user-solid'></i>
 				admin
 			</div>
-			<div class="hasAuth fontRed">
+			<div class="hasAuth fontRed" @click="openAuth">
 				{{$t('noAuth')}}
 			</div>
 			<div class="relexPass">
@@ -18,12 +18,25 @@
 				{{$t('loginOut')}}
 			</div>
 		</div>
+		<authfrom v-if='authFormShow'  @close='authFormShow=false'></authfrom>
 	</div>
 </template>
 
 <script>
+	import authfrom from "./form/authform.vue";
 	export default {
-		name:'headerbar'
+		name:'headerbar',
+		components:{ authfrom },
+		data(){
+			return {
+				authFormShow:false
+			}
+		},
+		methods:{
+			openAuth(){
+				this.authFormShow=true;
+			}
+		}
 	}
 </script>
 
